@@ -1,3 +1,18 @@
+set nocompatible
+filetype off
+
+if has('vim_starting')
+	set runtimepath+=~/.vim/neobundle.vim.git
+	call neobundle#rc(expand('~/.vim/.bundle'))
+endif
+
+NeoBundle 'git://github.com/tpope/vim-surround.git'
+NeoBundle 'git://github.com/tpope/vim-repeat.git'
+NeoBundle 'git://github.com/Shougo/neocomplcache.git'
+NeoBundle 'git://github.com/Shougo/unite.vim.git'
+NeoBundle 'git://github.com/mattn/zencoding-vim.git'
+
+filetype plugin indent on
 
 set number
 set showmode
