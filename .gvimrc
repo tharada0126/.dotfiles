@@ -1,6 +1,6 @@
 colorscheme evening
 
-set columns=100
+set columns=200
 set lines=80
 
 set guifont=Ubuntu\ Mono\ 12

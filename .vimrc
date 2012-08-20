@@ -50,7 +50,6 @@ autocmd InsertEnter * highlight StatusLine guifg=#ccdc90 guibg=#2E4340
 autocmd InsertLeave * highlight StatusLine guifg=#2E4340 guibg=#ccdc90
 augroup END
 
-"set visualbell t_vb=
 
 :set encoding=utf-8
 :set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
@@ -63,3 +62,8 @@ noremap <CR> o<ESC>
 
 nnoremap j gj
 nnoremap k gk
+
+nnoremap <silent> fb :<C-u>Unite buffer<CR>
+nnoremap <silent> ff :<C-u>UniteWithBufferDir -buffer-name=dotfiles file<CR>
+nnoremap <silent> fr :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> fm :<C-u>Unite file_mru<CR>
