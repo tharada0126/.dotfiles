@@ -68,4 +68,4 @@ nnoremap <silent> ff :<C-u>UniteWithBufferDir -buffer-name=dotfiles file<CR>
 nnoremap <silent> fr :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> fm :<C-u>Unite file_mru<CR>
 nnoremap <silent> C :%!astyle -pST<CR>
-
+imap <C-j> <ESC>:%!astyle -pST<LF>
