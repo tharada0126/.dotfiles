@@ -11,6 +11,7 @@ NeoBundle 'git://github.com/tpope/vim-repeat.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/mattn/zencoding-vim.git'
+NeoBundle 'git://github.com/motemen/git-vim.git'
 
 filetype plugin indent on
 
