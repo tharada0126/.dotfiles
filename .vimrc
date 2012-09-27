@@ -13,6 +13,8 @@ NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 NeoBundle 'git://github.com/motemen/git-vim.git'
 
+"NeoBundle 'im_control', {'type' : 'nosync', 'base' : '~/.vim/.bundle/manual'}
+
 filetype plugin indent on
 
 set number
@@ -42,6 +44,7 @@ set ignorecase
 set smartcase
 set whichwrap=b,s,h,l,<,>,[,]
 set nowrapscan
+set cmdheight=2
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
 
@@ -70,3 +73,6 @@ nnoremap <silent> fr :<C-u>Unite -buffer-name=register register<CR>
 nnoremap <silent> fm :<C-u>Unite file_mru<CR>
 nnoremap <silent> C :%!astyle -pST<CR>
 imap <C-j> <ESC>:%!astyle -pST<LF>
+"inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
+"let IM_CtrlIBusPython = 1
+"let g:IM_CtrlBufLocalMode = 1

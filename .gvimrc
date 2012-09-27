@@ -10,3 +10,7 @@ set guioptions-=T
 set guioptions+=a
 
 set visualbell t_vb=
+
+if has('gui_macvim')
+	set showtabline=2
+endif
