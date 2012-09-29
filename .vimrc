@@ -12,6 +12,8 @@ NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 NeoBundle 'git://github.com/motemen/git-vim.git'
+NeoBundle 'git://github.com/scrooloose/nerdtree.git'
+NeoBundle 'git://github.com/majutsushi/tagbar.git'
 
 "NeoBundle 'im_control', {'type' : 'nosync', 'base' : '~/.vim/.bundle/manual'}
 
@@ -76,3 +78,8 @@ imap <C-j> <ESC>:%!astyle -pST<LF>
 "inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
 "let IM_CtrlIBusPython = 1
 "let g:IM_CtrlBufLocalMode = 1
+if has('mac')
+	let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+	nmap <C-n> :NERDTree<CR>
+	nnoremap <silent> <F9> :TagbarToggle<CR>
+endif
