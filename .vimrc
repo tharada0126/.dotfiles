@@ -14,7 +14,9 @@ NeoBundle 'git://github.com/mattn/zencoding-vim.git'
 NeoBundle 'git://github.com/motemen/git-vim.git'
 NeoBundle 'git://github.com/scrooloose/nerdtree.git'
 NeoBundle 'git://github.com/majutsushi/tagbar.git'
+NeoBundle 'git://github.com/nanotech/jellybeans.vim'
 
+NeoBundle 'git://github.com/fuenor/im_control.vim'
 "NeoBundle 'im_control', {'type' : 'nosync', 'base' : '~/.vim/.bundle/manual'}
 
 filetype plugin indent on
@@ -47,6 +49,9 @@ set smartcase
 set whichwrap=b,s,h,l,<,>,[,]
 set nowrapscan
 set cmdheight=2
+set wrap
+set linebreak
+set nolist
 highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 match ZenkakuSpace /　/
 
@@ -61,25 +66,24 @@ augroup END
 :set fileencodings=iso-2022-jp,euc-jp,sjis,utf-8
 :set fileformats=unix,dos,mac
 
+nnoremap <silent> fb :<C-u>Unite buffer<CR>
+nnoremap <silent> ff :<C-u>UniteWithBufferDir -buffer-name=dotfiles file<CR>
+nnoremap <silent> fr :<C-u>Unite -buffer-name=register register<CR>
+nnoremap <silent> fm :<C-u>Unite file_mru<CR>
+nnoremap <silent> C :%!astyle -pST<CR>
+let IM_CtrlMode = 4
+inoremap <silent> <C-j> <C-^><C-r>=IMState('FixMode')<CR>lBufLocalMode = 1
+if has('mac')
+	let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+	nmap <C-n> :NERDTree<CR>
+	nnoremap <silent> <C-m> :TagbarToggle<CR>
+endif
+
 noremap <Leader><Leader> :up<CR>
+lBufLocalMode = 1
 nnoremap <Space> jzz
 nnoremap <S-Space> kzz
 noremap <CR> o<ESC>
 
 nnoremap j gj
 nnoremap k gk
-
-nnoremap <silent> fb :<C-u>Unite buffer<CR>
-nnoremap <silent> ff :<C-u>UniteWithBufferDir -buffer-name=dotfiles file<CR>
-nnoremap <silent> fr :<C-u>Unite -buffer-name=register register<CR>
-nnoremap <silent> fm :<C-u>Unite file_mru<CR>
-nnoremap <silent> C :%!astyle -pST<CR>
-imap <C-j> <ESC>:%!astyle -pST<LF>
-"inoremap <silent> <C-j> <C-r>=IMState('FixMode')<CR>
-"let IM_CtrlIBusPython = 1
-"let g:IM_CtrlBufLocalMode = 1
-if has('mac')
-	let g:tagbar_ctags_bin='/usr/local/bin/ctags'
-	nmap <C-n> :NERDTree<CR>
-	nnoremap <silent> <F9> :TagbarToggle<CR>
-endif

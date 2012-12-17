@@ -1,4 +1,5 @@
-colorscheme evening
+'colorscheme evening
+colorscheme jellybeans
 
 set columns=200
 set lines=80
