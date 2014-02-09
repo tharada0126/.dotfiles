@@ -15,6 +15,7 @@ NeoBundle 'git://github.com/motemen/git-vim.git'
 NeoBundle 'git://github.com/scrooloose/nerdtree.git'
 NeoBundle 'git://github.com/majutsushi/tagbar.git'
 NeoBundle 'git://github.com/nanotech/jellybeans.vim'
+NeoBundle 'HybridText'
 
 NeoBundle 'git://github.com/fuenor/im_control.vim'
 "NeoBundle 'im_control', {'type' : 'nosync', 'base' : '~/.vim/.bundle/manual'}
@@ -73,17 +74,24 @@ nnoremap <silent> fm :<C-u>Unite file_mru<CR>
 nnoremap <silent> C :%!astyle -pST<CR>
 let IM_CtrlMode = 4
 inoremap <silent> <C-j> <C-^><C-r>=IMState('FixMode')<CR>lBufLocalMode = 1
-if has('mac')
-	let g:tagbar_ctags_bin='/usr/local/bin/ctags'
-	nmap <C-n> :NERDTree<CR>
-	nnoremap <silent> <C-m> :TagbarToggle<CR>
-endif
 
 noremap <Leader><Leader> :up<CR>
-lBufLocalMode = 1
+"lBufLocalMode = 1
 nnoremap <Space> jzz
 nnoremap <S-Space> kzz
 noremap <CR> o<ESC>
 
 nnoremap j gj
 nnoremap k gk
+
+if has('mac')
+	let g:tagbar_ctags_bin='/usr/local/bin/ctags'
+	nmap <C-n> :NERDTree<CR>
+	nnoremap <silent> <C-s> :TagbarToggle<CR>
+	"nmap <C-S-b> :make<CR>
+	:set noimdisableactivate
+endif
+"autocmd BufEnter * if &filetype === "" | setlocal ft=hybrid | endif
+
+"au BufNewFile,BufRead *.hs	set nowrap tabstop=2 shiftwidth=2 expandtab
+au BufNewFile,BufRead *.tex	set spell
