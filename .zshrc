@@ -1,0 +1,47 @@
+export LANG=ja_JP.UTF-8
+export KCODE=u
+bindkey -e
+#bindkey -v
+setopt correct
+setopt auto_menu
+setopt NO_beep
+alias gvim="open -a MacVim"
+alias preview="open -a Preview"
+alias excel="open -a Microsoft\\ Excel"
+alias safari="open -a Safari"
+alias word="open -a Microsoft\\ Word"
+alias virtualpython="source $HOME/local/python/bin/activate"
+alias keynote="open -a Keynote"
+alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+
+### Ls Color ###
+# 色の設定
+# export LSCOLORS=Exfxcxdxbxegedabagacad
+# # 補完時の色の設定
+# export LS_COLORS='di=01;34:ln=01;35:so=01;32:ex=01;31:bd=46;34:cd=43;34:su=41;30:sg=46;30:tw=42;30:ow=43;30'
+# # ZLS_COLORSとは？
+# export ZLS_COLORS=$LS_COLORS
+# # lsコマンド時、自動で色がつく(ls -Gのようなもの？)
+# export CLICOLOR=true
+# # 補完候補に色を付ける
+# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+# k
+autoload -U colors; colors
+
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
+
+#pythonbrew
+if [ -s "$HOME/.pythonbrew/etc/bashrc" ]; then
+	source "$HOME/.pythonbrew/etc/bashrc"
+	#exec command like virtualenvwrapper
+	alias mkvirtualenv="pythonbrew venv create"
+	alias rmvirtualenv="pythonbrew venv delete"
+	alias workon="pythonbrew venv use"
+fi
+[[ -s "$HOME/.pythonbrew/etc/bashrc" ]] && source "$HOME/.pythonbrew/etc/bashrc"
+#eval "$(rbenv init -)"

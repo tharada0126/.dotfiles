@@ -1,7 +1,7 @@
 'colorscheme evening
 colorscheme jellybeans
 
-set columns=100
+set columns=200
 set lines=50
 
 'set guifont=Ubuntu\ Mono\ 12

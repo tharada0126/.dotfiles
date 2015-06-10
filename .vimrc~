@@ -98,7 +98,7 @@ inoremap <silent> <C-j> <C-^><C-r>=IMState('FixMode')<CR>lBufLocalMode = 1
 " Markdown Preview
 " <F7>でプレビュー
 nnoremap <silent> <F7> :PrevimOpen<CR> \| :silent !open -a MacVim <CR>
-"let g:previm_disable_default_css = 1
+let g:previm_disable_default_css = 1
 let g:previm_custom_css_path = '/Users/Harada/Downloads/github.css'
  
 " プレビューと同時にフォーカスをiTerm2に戻したければ､以下を参考にします """{{{
